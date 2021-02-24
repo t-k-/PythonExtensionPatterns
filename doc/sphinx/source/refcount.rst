@@ -232,7 +232,7 @@ What would be bad is this:
     PyTuple_SetItem(r, 0, v);   /* r takes ownership of the reference. */
     Py_DECREF(v);               /* Now we are interfering with r's internals. */
 
-Once ``v`` has been passed to ``PyTuple_SetItem`` then your  ``v`` becomes a *borrowed* reference with all of their problems which is the subject of the next section.
+Once ``v`` has been passed to ``PyTuple_GetItem`` then your  ``v`` becomes a *borrowed* reference with all of their problems which is the subject of the next section.
 
 The contract with *stolen* references is: the thief will take care of things so you don't have to. If you try to the results are undefined.
 
